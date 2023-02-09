@@ -1,0 +1,114 @@
+.scene-card {
+    border-radius: 6px;
+    box-shadow: 3px 3px 2px 0px #10161a66,0 0 #10161a00,0 0 #10161a00
+}
+
+.scene-card.grid-card.card div.card-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.scene-card.grid-card.card div.card-section a h5.card-section-title.flex-aligned {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    height: 2em;
+    line-height: 1em;
+    align-items: unset;
+}
+
+.scene-card.grid-card.card div.card-section div.scene-card__details {
+    display: none;
+}
+
+.scene-card.card > hr {
+    border-top: 1px solid rgba(0,0,0,.5);
+}
+
+.scene-card.grid-card.card div.card-popovers.btn-group {
+    margin-top: auto;
+}
+
+.video-section > .scene-card-link > .scene-specs-overlay {
+    margin-right: -0.5em;
+    margin-bottom: 0.25em;
+    font-family: 'Inter', sans-serif;
+}
+
+.scene-specs-overlay > .overlay-resolution {
+    font-weight: unset;
+}
+
+.video-section > .scene-card-link > .scene-specs-overlay span {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.3em;
+    border-radius: 5px;
+    margin-right: .3rem;
+    text-transform: uppercase;
+    letter-spacing: unset;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-performers {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    display: flex;
+    line-height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-performers > .scene-performers-list {
+    width: 80%;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-performers > .scene-performers-list span {
+    margin-right: 1em;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-info {
+    display: block;
+    width: 100%;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-info span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 33%;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-info > a > .scene-studio {
+    color: lightgray;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-info > .scene-view-count {
+    text-align: center;
+}
+
+.scene-card.grid-card.card > .card-section > .scene-info > .scene-date {
+    text-align: right;
+}
+
+.scene-card .card-section span { font-size: 12px; }
+
+/* Give all the scene cards a fixed size so that scenes with odd/vertical aspect ratios don't mess things up*/
+.image-card-preview-image.portrait { background-color: black; }
+.scene-card-preview-image { background-color: black; }
+
+.zoom-0 .scene-card-preview-image{height: 135px;}
+.zoom-0 .scene-card-preview-video {height: 135px;}
+.zoom-0 .scene-card-preview{height: 135px;}
+
+.zoom-1 .scene-card-preview-image{height: 185px;}
+.zoom-1 .scene-card-preview-video {height: 185px;}
+.zoom-1 .scene-card-preview{height: 185px;}
+
+.zoom-2 .scene-card-preview-image{height: 270px;}
+.zoom-2 .scene-card-preview-video {height: 270px;}
+.zoom-2 .scene-card-preview{height: 270px;}
+
+.zoom-3 .scene-card-preview-image{height: 360px;}
+.zoom-3 .scene-card-preview-video {height: 360px;}
+.zoom-3 .scene-card-preview{height: 360px;}

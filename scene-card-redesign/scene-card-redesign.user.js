@@ -153,9 +153,11 @@
         if(!date) return;
 
         const dateParser = new Date(date);
-        const month = dateParser.toLocaleString('default', {month: 'short'});
-        const day = dateParser.getDate();
-        const year = dateParser.getFullYear();
+        // Fixes a bug where the date is a day behind
+        const dateFix = new Date(dateParser.getTime() - dateParser.getTimezoneOffset() * -60000);
+        const month = dateFix.toLocaleString('default', {month: 'short'});
+        const day = dateFix.getDate();
+        const year = dateFix.getFullYear();
 
         const dateNode = document.createElement('span');
         dateNode.classList.add('scene-date');

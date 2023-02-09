@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scene Card Redesign
 // @namespace    QxxxGit
-// @version      0.1
+// @version      0.2
 // @description  Redesigns the scene card; adds performers at-a-glance, FPS overlay, view count, and more. Thanks to ilovep4k for design idea and Inter font.
 // @author       Qx
 // @match        http://localhost:9999/*
@@ -243,4 +243,5 @@
     stash.addEventListener('page:studio:scenes', () => display());
     stash.addEventListener('page:performer:scenes', () => display());
     stash.addEventListener('page:tag:scenes', () => display());
+    stash.addEventListener('page:movie:scenes', () => display());
 })();

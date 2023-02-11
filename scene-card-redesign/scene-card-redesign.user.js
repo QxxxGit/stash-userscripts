@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Scene Card Redesign
 // @namespace    QxxxGit
-// @version      0.2
+// @version      0.3
 // @description  Redesigns the scene card; adds performers at-a-glance, FPS overlay, view count, and more. Thanks to ilovep4k for design idea and Inter font.
 // @author       Qx
 // @match        http://localhost:9999/*
@@ -12,6 +12,10 @@
 // @grant       GM_addStyle
 // @grant       GM_getResourceText
 // ==/UserScript==
+
+// CHANGELOG
+// 0.2 - Fixed movie page not updating scene cards
+// 0.3 - Fixed issue where scenes without files were throwing an error
 
 (function() {
     'use strict';
@@ -216,6 +220,10 @@
                 if(document.getElementById(infoNodeId)) return;
 
                 const scene = stash.scenes[sceneId];
+
+                if(!scene) continue;
+                if(!scene?.id) continue;
+
                 const infoNode = document.createElement('div');
                 infoNode.setAttribute('id', infoNodeId);
                 infoNode.classList.add('scene-info');
@@ -225,7 +233,9 @@
                     studioOverlay.remove();
                 }
 
-                updateSceneSpecsOverlay(currentCard, scene.id, scene.files[0].frame_rate);
+                if(scene?.files[0]?.frame_rate)
+                    updateSceneSpecsOverlay(currentCard, scene.id, scene.files[0].frame_rate);
+
                 updatePerformers(currentCard, scene.id, scene.performers);
                 updateStudios(infoNode, scene.studio);
                 updateViews(infoNode, scene.play_count);
